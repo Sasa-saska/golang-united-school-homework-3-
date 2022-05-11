@@ -3,9 +3,11 @@ package homework
 import "sort"
 
 func reverse(input []int64) (result []int64) {
-	sort.Slice(input, func(i, j int) bool {
-		return input[i] > input[j]
+	result = make([]int64, len(input))
+	copy(result, input)
+	sort.Slice(result, func(i, j int) bool {
+		return result[i] > result[j]
 	})
 
-	return input
+	return result
 }
